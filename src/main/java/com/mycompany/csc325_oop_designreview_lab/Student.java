@@ -10,13 +10,20 @@ package com.mycompany.csc325_oop_designreview_lab;
  */
 public class Student extends Human{
 
-    //private field for GPA
+    //private field for gpa
     private double gpa;
+    //private field for credits
+    private int credits;
 
-	//constructor
-    public Student (String name, short age)
-    {
-        super(name, age); //calls the parent class constructor, which in this case is the Human class constructor.
+    //constructor with 2 parameters
+    public Student(String name, short age) {
+        super(name, age);
+    }
+
+    //constructor with 3 parameters
+    public Student(String name, short age, int credits) {
+        super(name, age);
+        this.credits = credits;
     }
 
     //address getter
@@ -28,13 +35,33 @@ public class Student extends Human{
     //address setter
     @Override
     public void setAddress(String address) {
-
+        //nothing to do here
     }
 
     //gpa getter
-    public double getGpa(){
+    public double getGpa() {
         return gpa;
     }
 
+    //gpa setter
+    public void setGpa(double gpa) {
+        this.gpa = gpa;
+    }
+
+    //credits getter
+    public int getCredits() {
+        return this.credits;
+    }
+
+    //credits setter
+    public void setCredits(int credits) {
+        this.credits = credits;
+    }
+
+    //toString method
+    @Override
+    public String toString() {
+        return "Name: " + this.getName() + "\nAge: " + this.getAge() + "\nGPA: " + this.getGpa() + "\nCredits: " + this.getCredits() + "\n";
+    }
 
 }
